@@ -38,19 +38,19 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [true, "Category is required"],
         enum: {
-            value : [
-                'Electronics',
-                'Laptops',
-                'Acessories',
-                'Cameras',
-                'Headphones',
-                'Food',
-                'Books',
-                'Clothes/Shoes',
-                'Beauty/Health',
-                'Sports',
-                'Outdoor',
-                'Home'
+            values : [
+                "Electronics",
+                "Laptops",
+                "Acessories",
+                "Cameras",
+                "Headphones",
+                "Food",
+                "Books",
+                "Clothes/Shoes",
+                "Beauty/Health",
+                "Sports",
+                "Outdoor",
+                "Home"
             ],
             message: "please select a valid category"
         }
