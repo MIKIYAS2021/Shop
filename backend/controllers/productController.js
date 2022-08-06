@@ -1,18 +1,18 @@
 const Product  = require('../models/products')
 const ErrorHandler = require("../utils/errorHandler")
-
+const catchAsyncError = require("../middlewares/catchAsyncError")
 /* This is a function that creates a new product. admin api/v1/products*/
-exports.newProduct = async (req, res,next) => {
+exports.newProduct = catchAsyncError(async (req, res,next) => {
 
     const product = await Product.create(req.body)
     res.status(201).json({
         success: true,
         product
     })
-}
+})
 
 /* This is a function that gets all the products in the database. */
-exports.getProducts = async (req, res,next) => {
+exports.getProducts = catchAsyncError(async (req, res,next) => {
 
     const products = await Product.find()
 
@@ -21,17 +21,17 @@ exports.getProducts = async (req, res,next) => {
         count : products.length,
         products
     });
-}
+})
 
 
 
 /* This is a function that gets a single product by id. */
-exports.getSingleProduct = async (req, res, next) => {
+exports.getSingleProduct =catchAsyncError(async (req, res,next) => {
 
     const id = req.params.id;
     const product = await Product.findById(id)
     if(!product){
-        return next(new ErrorHandler( "Product not found", 404))
+        return next(new ErrorHandler("Product not found", 404))
     }
     else{
         res.status(200).json({
@@ -39,10 +39,10 @@ exports.getSingleProduct = async (req, res, next) => {
             product
         })
     }
-}
+})
 
 /* The above code is updating a single product. admin api/v1/products/:id*/
-exports.updateSingleProduct = async (req, res, next) => {
+exports.updateSingleProduct = catchAsyncError(async (req, res,next) => {
         const id = req.params.id;
         const product = await Product.findByIdAndUpdate(id, req.body,
              {new: true,
@@ -50,10 +50,7 @@ exports.updateSingleProduct = async (req, res, next) => {
             useFindAndModify: false 
         })
         if(!product){
-            return res.status(404).json({
-                success: false,
-                message: "Product not found"
-            })
+            return next(new ErrorHandler("Product not found", 404))
         }
         else{
             res.status(200).json({
@@ -61,16 +58,13 @@ exports.updateSingleProduct = async (req, res, next) => {
                 product
             })
         }
-    }
+    })
 
     /* This is a function that deletes a single product. admin api/v1/products/:id */
-exports.deleteProduct = async (req, res, next) => {
+exports.deleteProduct = catchAsyncError(async (req, res,next) => {
         const product = await Product.findByIdAndDelete(req.params.id);
         if(!product){
-            return res.status(404).json({
-                success: false,
-                message: "Product not found"
-            })
+            return next(new ErrorHandler("Product not found", 404))
         }
         else{
             res.status(200).json({
@@ -78,4 +72,4 @@ exports.deleteProduct = async (req, res, next) => {
                 message: "Product deleted"
             })
         }
-    }
+    })
