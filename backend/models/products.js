@@ -16,13 +16,13 @@ const productSchema = new mongoose.Schema({
     description: {
         type: String,
         required: [true, "Description is required"]
-     },
-     rating: 
+    },
+    rating: 
      {
         type: Number,
         default:0
-     },
-     image: [
+    },
+    image: [
         {
             public_id : {
                 type: String,
@@ -33,8 +33,8 @@ const productSchema = new mongoose.Schema({
                 required: [true, "Image is required"]
                 }
         }
-     ],
-     category: {
+    ],
+    category: {
         type: String,
         required: [true, "Category is required"],
         enum: {
@@ -85,10 +85,15 @@ const productSchema = new mongoose.Schema({
             }
         }
     ],
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'user',
+        required: true
+    },
     createdAt: {
         type: Date,
         default: Date.now
-        }
+    }
 })
 
 module.exports = mongoose.model("Product", productSchema)

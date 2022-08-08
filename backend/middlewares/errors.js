@@ -24,9 +24,21 @@ module.exports = (err, req, res, next) => {
             const message = Object.values(err.errors).map(value => value.message);
             error = new ErrorHandler(message, 400);
         }
-    
-
-
+        //handle mongoose duplicate errors
+        if(err.code === 11000) {
+            const message = `Duplicate ${Object.keys(err.keyValue)} entered`
+            error = new ErrorHandler(message,400)
+        }    
+        //handle jwt errors
+        if(err.name === "JsonWebTokenError") {
+            const message = "Invalid token. Try again";
+            error = new ErrorHandler(message, 400);
+        }
+        //handle jwt expired errors
+        if(err.name === "TokenExpiredError") {
+            const message = "Token expired. Login again";   
+            error = new ErrorHandler(message, 400);
+        }
         res.status(error.statuscode).json({
             success: false,
             message: error.message ||  "internal server error"
