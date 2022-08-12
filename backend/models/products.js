@@ -17,10 +17,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [true, "Description is required"]
     },
-    rating: 
+    ratings: 
      {
         type: Number,
-        default:0
+        default:0 
     },
     image: [
         {
@@ -75,14 +75,20 @@ const productSchema = new mongoose.Schema({
                 type: String,
                 required: [true, "Reviewer is required"],
             },
-            rating: {
+            ratings: {
                 type: Number,
                 required: true,
             },
             comment: {
                 type: String,
                 required : true
+            },
+            user: {
+                type: mongoose.Schema.ObjectId,
+                ref: 'user',
+                required: true
             }
+
         }
     ],
     user: {

@@ -5,7 +5,7 @@ const {getProducts,
     newProduct,
     getSingleProduct,
     updateSingleProduct,
-    deleteProduct
+    deleteProduct,createReview,getReviews,deleteReview
 }  = require("../controllers/productController")
 
 const {isAuthenticatedUser,authorizeRoles} = require("../middlewares/auth")
@@ -17,5 +17,9 @@ router.route("/admin/products/new").post(isAuthenticatedUser,authorizeRoles('adm
 router.route("/admin/products/:id([0-9a-fA-F]{24})")
     .put(isAuthenticatedUser,authorizeRoles('admin'),updateSingleProduct)
     .delete(isAuthenticatedUser,authorizeRoles('admin'),deleteProduct)
+
+router.route("/review").put(isAuthenticatedUser,createReview)
+router.route("/reviews").get(getReviews,isAuthenticatedUser)
+                        .delete(isAuthenticatedUser,deleteReview)
 
 module.exports = router;

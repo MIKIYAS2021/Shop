@@ -3,7 +3,7 @@
       "name": "SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s",
       "price": 45.89,
       "description": "Ultra-fast cards (2) to take better pictures and Full HD videos (1) with your compact to mid-range point-and-shoot cameras and camcorders. With SanDisk Ultra SDXC UHS-I cards you’ll benefit from faster downloads, high capacity, and better performance to capture and store 128GB (5) of high quality pictures and Full HD video (1). Take advantage of ultra-fast read speeds of up to 80MB/s (3) to save time moving photos and videos from the card to your computer. From a leader in flash memory storage, SanDisk Ultra SDXC UHS-I cards are compatible with SDHC and SDXC digital devices, and come with a 10-year limited warranty (6).",
-      "ratings": 4.5,
+      "ratings": 4,
       "images": [
         {
           "public_id": "products/dsvbpny402gelwugv2le",
@@ -13,7 +13,7 @@
       "category": "Electronics",
       "seller": "Ebay",
       "stock": 50,
-      "numOfReviews": 32,
+      "numberOfReviews": 32,
       "reviews": []
     },
     {
@@ -30,7 +30,7 @@
       "category": "Electronics",
       "seller": "Amazon",
       "stock": 0,
-      "numOfReviews": 2,
+      "numberOfReviews": 2,
       "reviews": []
     },
     {
@@ -47,7 +47,7 @@
       "category": "Electronics",
       "seller": "Amazon",
       "stock": 1,
-      "numOfReviews": 12,
+      "numberOfReviews": 12,
       "reviews": []
     },
     {
@@ -64,7 +64,7 @@
       "category": "Headphones",
       "seller": "Amazon",
       "stock": 11,
-      "numOfReviews": 112,
+      "numberOfReviews": 112,
       "reviews": []
     },
     {
@@ -81,7 +81,7 @@
       "category": "Electronics",
       "seller": "Amazon",
       "stock": 122,
-      "numOfReviews": 2671,
+      "numberOfReviews": 2671,
       "reviews": []
     },
     {
@@ -98,7 +98,7 @@
       "category": "Accessories",
       "seller": "Amazon",
       "stock": 1123,
-      "numOfReviews": 6,
+      "numberOfReviews": 6,
       "reviews": []
     },
     {
@@ -115,7 +115,7 @@
       "category": "Cameras",
       "seller": "Amazon",
       "stock": 131,
-      "numOfReviews": 222,
+      "numberOfReviews": 222,
       "reviews": []
     },
     {
@@ -132,7 +132,7 @@
       "category": "Laptops",
       "seller": "Amazon",
       "stock": 0,
-      "numOfReviews": 56,
+      "numberOfReviews": 56,
       "reviews": []
     },
     {
@@ -157,7 +157,7 @@
       "category": "Food",
       "seller": "Kauffman's Fruit Farm & Market",
       "stock": 500,
-      "numOfReviews": 1,
+      "numberOfReviews": 1,
       "reviews": []
     }
   ]

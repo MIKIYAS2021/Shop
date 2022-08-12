@@ -6,17 +6,12 @@ const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
 
 exports.registerUser = catchAsyncError(async (req, res, next) => {
-
+    const newuse = {...req.body, avatar: {
+        public_id: "Avatar/istockphoto-1270067126-612x612_iujool",
+        url: "https://res.cloudinary.com/dgp5b788s/image/upload/v1659867328/Avatar/istockphoto-1270067126-612x612_iujool.jpg"
+    }}
     const {name, password , email} = req.body;
-    const newUser = await User.create({
-        name,
-        password,
-        email,
-        avatar: {
-            public_id: "Avatar/istockphoto-1270067126-612x612_iujool",
-            url: "https://res.cloudinary.com/dgp5b788s/image/upload/v1659867328/Avatar/istockphoto-1270067126-612x612_iujool.jpg"
-        }
-    }) 
+    const newUser = await User.create(newuse) 
     sendToken(newUser, 200, res)
 })
 exports.loginUser = catchAsyncError(async (req,res,next) => {
