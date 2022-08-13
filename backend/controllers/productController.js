@@ -14,19 +14,27 @@ exports.newProduct = catchAsyncError(async (req, res,next) => {
 
 /* This is a function that gets all the products in the database. */
 exports.getProducts = catchAsyncError(async (req, res,next) => {
-    const resPerPage = 8;
+    
+    const resPerPage = 4;
     const productCount = await Product.countDocuments();
     const apifeatures = new APIFeatures(Product.find(),req.query)
                                 .search()
                                 .filter()
-                                .pagination(resPerPage)
-    const products = await apifeatures.query;
+                                
+    let products = await apifeatures.query
+    let filteredProductsCount = products.length
+    apifeatures.pagination(resPerPage)
+    
 
-    res.status(200).json({
-        success : true,
-        productCount,
-        products
-    });
+    
+        res.status(200).json({
+            success : true,
+            productCount,
+            resPerPage,
+            filteredProductsCount,
+            products
+        });
+   
 })
 
 

@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/layout/header';
 import Footer from './components/layout/footer';
 import Home from './components/home';
+import ProductDetails from './components/product/productDetail';
 function App() {
   return (
    <Router>
@@ -11,7 +12,10 @@ function App() {
       <Header />
       <div className="container container-fluid">
       <Routes>
-      <Route  path="/" element={<Home/>} />
+      <Route exact path="/" element={<Home/>}  />
+      <Route  path="/search/:keyword" element={<Home/>} />
+      <Route  path="/product/:id" element={<ProductDetails/>} exact/>
+
       </Routes>
       </div>
       <Footer />
