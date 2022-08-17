@@ -4,7 +4,8 @@ const {registerUser,loginUser,
     logoutUser, forgotPassword,
      resetPassword,getUserProfile,
     updatePassword,updateProfile,
-    getAllUsers,getSingleUser,updateUser,deleteUser
+    getAllUsers,getSingleUser,
+    updateUser,deleteUser
 } = require("../controllers/userController")
     
 const {isAuthenticatedUser,authorizeRoles}= require("../middlewares/auth")
