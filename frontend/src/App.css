@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -537,7 +534,7 @@ footer {
 #sidebar {
   min-width: 100%;
   max-width: 100%;
-  background: #232f3e;
+  background: #8f9dad;
   color: #fff;
   transition: all 0.3s;
 }
@@ -652,4 +649,7 @@ ul.CTAs a {
 .review_user {
   font-size: 0.8rem;
   color: grey;
+}
+.bg-product {
+  background-color: #23fac882;
 }

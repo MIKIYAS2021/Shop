@@ -3,9 +3,15 @@ import {useSelector} from 'react-redux'
 import Login from '../user/login'
 
 const ProtectedRoute = ({children}) => {
-    const {isAuthenticated,user,loading} = useSelector((state) => state.auth)
-    console.log(user,isAuthenticated)
-    return((!loading&&isAuthenticated) ? children: <Login/>)
+    const {isAuthenticated,loading} = useSelector((state) => state.auth)
+    if(!loading&&isAuthenticated) {
+        return children
+    
+    } else{
+       return <Login/>
+    }
+    
+
 
 }
 export default ProtectedRoute

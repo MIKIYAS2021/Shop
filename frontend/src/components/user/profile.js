@@ -17,7 +17,7 @@ const Profile = () => {
           <div className="row justify-content-around mt-5 user-info">
             <div className="col-12 col-md-3">
               <figure className="avatar avatar-profile">
-                <img className="rounded-circle img-fluid" src={user.avatar.url} alt={user.name} />
+                <img className="rounded-circle img-fluid" src={ user.avatar.url} alt={user.name} />
               </figure>
               <Link
                 to="/me/update"
@@ -38,12 +38,10 @@ const Profile = () => {
               <h4>Joined On</h4>
               <p>{String(user.createdAt).substring(0,10)}</p>
         
-               {user.role !== 'admin' && (
-              <Link to="/order/me" className="btn btn-danger
+              <Link to="/orders/me" className="btn btn-danger
                btn-block mt-5">
                 My Orders
               </Link>
-                )}
               <Link to="/password/update" className="btn btn-primary btn-block mt-3">
                 Change Password
               </Link>

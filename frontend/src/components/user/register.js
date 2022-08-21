@@ -17,7 +17,7 @@ const Register = () => {
 
     const { name, email, password } = user;
 
-    const [avatar, setAvatar] = useState('/images/default_avatar.jpg')
+    const [avatar, setAvatar] = useState('')
     const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
 
     const alert = useAlert();
@@ -80,7 +80,7 @@ const Register = () => {
                         <h1 className="mb-3">Register</h1>
 
                         <div className="form-group">
-                            <label htmlFor="email_field">Name</label>
+                            <label htmlFor="name_field">Name</label>
                             <input
                                 type="name"
                                 id="name_field"
